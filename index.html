@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Transitions</title>
+
+<style>
+
+/* ===== Zadanie 1 ===== */
+
+.box1{
+    width:200px;
+    height:200px;
+    background-color:orange;
+    transition: all 2s;
+    margin-bottom:40px;
+}
+
+.box1:hover{
+    background-color:red;
+    width:300px;
+}
+
+
+/* ===== Zadanie 2 ===== */
+
+.container{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.box{
+    width:120px;
+    height:120px;
+    background-color:blueviolet;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition: transform 2s;
+}
+
+/* tekst ukryty */
+.box span{
+    opacity:0;
+    color:white;
+    transition:opacity 0.5s;
+}
+
+/* tekst pojawia się po hover */
+.box:hover span{
+    opacity:1;
+}
+
+/* przesunięcia */
+
+.linear{
+    transition-timing-function:linear;
+}
+
+.ease{
+    transition-timing-function:ease;
+}
+
+.easein{
+    transition-timing-function:ease-in;
+}
+
+.easeout{
+    transition-timing-function:ease-out;
+}
+
+.linear:hover,
+.ease:hover,
+.easein:hover,
+.easeout:hover{
+    transform:translateX(200px);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Zadanie 1 -->
+<div class="box1"></div>
+
+
+<!-- Zadanie 2 -->
+<div class="container">
+    <div class="box linear"><span>linear</span></div>
+    <div class="box ease"><span>ease</span></div>
+    <div class="box easein"><span>ease-in</span></div>
+    <div class="box easeout"><span>ease-out</span></div>
+</div>
+
+</body>
+</html>
